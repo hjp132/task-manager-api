@@ -6,7 +6,11 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "env-cmd -f ./config/dev.env nodemon src/index.js -e js,hbs",
-    "mongo-start": "/Users/PalmerH/mongodb/bin/mongod.exe --dbpath=/Users/PalmerH/mongodb-data"
+    "mongo-start": "/Users/PalmerH/mongodb/bin/mongod.exe --dbpath=/Users/PalmerH/mongodb-data",
+    "test": "env-cmd ./config/test.env jest --watch"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
@@ -17,11 +21,13 @@
     "env-cmd": "^10.0.1",
     "express": "^4.16.4",
     "handlebars": "^4.4.3",
+    "jest": "^24.9.0",
     "jsonwebtoken": "^8.4.0",
     "mongodb": "^3.1.10",
     "mongoose": "^5.3.16",
     "multer": "^1.4.2",
     "sharp": "^0.23.1",
+    "supertest": "^4.0.2",
     "validator": "^10.9.0"
   },
   "devDependencies": {
