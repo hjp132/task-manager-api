@@ -52,9 +52,29 @@ router.post('/users/logoutAll', auth, async (req, res) => {
     }
 });
 
-router.get('/users/me', auth, async (req, res) => {
-    res.send(req.user)
-});
+router.get('/users/:userId/profile', async (req, res) => {
+    const userId = req.params.userId;
+
+    const userModel = await User.findOne({_id : userId})
+    if (!userModel) {
+        throw new Error('Unable to login')
+    }
+
+    const userName = userModel.name;
+
+    //find the users tasks using the tasks model
+
+    res.render('profile', {
+        title: 'User Profile',
+        name: userName,
+        linkUrl: `/users/${userId}/avatar`,
+        helpText: 'This is some helpful text.',
+
+
+    })
+
+})
+
 
 router.patch('/users/me', auth, async (req, res) => {
     const updates = Object.keys(req.body);

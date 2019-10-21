@@ -106,3 +106,4 @@ test('Should not update invalid user fields', async () => {
         })
         .expect(400)
 });
+
