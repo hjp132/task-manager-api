@@ -3,6 +3,7 @@ const multer = require('multer');
 const sharp = require('sharp');
 const User = require('../models/user');
 const auth = require('../middleware/auth');
+const Task = require('../models/task');
 const { sendWelcomeEmail, sendCancelationEmail} = require('../emails/account');
 const router = express.Router();
 
@@ -55,12 +56,19 @@ router.post('/users/logoutAll', auth, async (req, res) => {
 router.get('/users/:userId/profile', async (req, res) => {
     const userId = req.params.userId;
 
-    const userModel = await User.findOne({_id : userId})
+    const userModel = await User.findOne({_id : userId});
     if (!userModel) {
         throw new Error('Unable to login')
     }
 
+    const getTask = await Task.find({owner : userId});
+    if (!getTask) {
+        throw new Error('Unable to login')
+    }
     const userName = userModel.name;
+
+    const taskDesc = getTask.description;
+
 
     //find the users tasks using the tasks model
 
@@ -69,11 +77,11 @@ router.get('/users/:userId/profile', async (req, res) => {
         name: userName,
         linkUrl: `/users/${userId}/avatar`,
         helpText: 'This is some helpful text.',
-
-
+        each_task: getTask,
+        desc: taskDesc
     })
 
-})
+});
 
 
 router.patch('/users/me', auth, async (req, res) => {

@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>{{title}}</title>
+    <title>{{name}}'s Profile</title>
 </head>
 
 <body>
@@ -18,7 +18,12 @@
     </div>
     <div class="tasks">
         <h3>To do list:</h3>
-
+        {{task}}
+        <ul class="task_list">
+            {{#each_task}}
+                <li>{{this}}</li>
+            {{/each_task}}
+        </ul>
     </div>
 </body>
 
