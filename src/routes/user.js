@@ -58,16 +58,31 @@ router.get('/users/:userId/profile', async (req, res) => {
 
     const userModel = await User.findOne({_id : userId});
     if (!userModel) {
-        throw new Error('Unable to login')
+        throw new Error('Invalid userid')
     }
 
     const getTask = await Task.find({owner : userId});
     if (!getTask) {
-        throw new Error('Unable to login')
+        throw new Error('There is no current tasks')
+    }
+    const doTask = await Task.find({owner : userId, completed : false});
+    if (!getTask) {
+        throw new Error('There is no active tasks')
+    }
+
+    const finTask = await Task.find({owner : userId, completed : true});
+    if (!getTask) {
+        throw new Error('No tasks have been finished')
     }
     const userName = userModel.name;
 
-    const taskDesc = getTask.description;
+    let dTask = doTask.map(function (dTask) {
+        return dTask.description;
+    });
+
+    let fTask = finTask.map(function (fTask) {
+        return fTask.description;
+    });
 
 
     //find the users tasks using the tasks model
@@ -77,9 +92,9 @@ router.get('/users/:userId/profile', async (req, res) => {
         name: userName,
         linkUrl: `/users/${userId}/avatar`,
         helpText: 'This is some helpful text.',
-        each_task: getTask,
-        desc: taskDesc
-    })
+        each_dotask: dTask,
+        each_fintask: fTask,
+})
 
 });
 
