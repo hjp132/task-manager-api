@@ -1,0 +1,19 @@
+body{
+    background-color: white;
+    h1{
+        color: black;
+        
+    }
+    .mould {
+        background-color: grey;
+        border-radius: 15px;
+        align-content: center;
+        width: 50%;
+        margin: auto;
+        .userProfile{
+            img{
+                align-content: center;
+            }
+        }
+    }
+}

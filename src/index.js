@@ -22,6 +22,7 @@ app.set('views', viewsPath);
 hbs.registerPartials(partialsPath);
 
 app.use(express.static(publicDirectoryPath));
+app.use(express.static(path.join(__dirname, '/public')));
 
 
 const router = express.Router();
