@@ -2,25 +2,22 @@
 
 <head>
     <title>{{name}}'s Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/profile.css" type="text/css">
 </head>
 
 
 
 <body>
-     <div class="mould">
+    <div class="container">
+        {{>header}}
         <div class="userProfile">
             <img src="{{linkUrl}}">
-             <h1>Hello, <br> {{name}}</h1>
+            <h1>Hello, <br> {{name}}</h1>
              <div class="help-text">
-            
+                 <p>{{helpText}}</p>
             </div>
-             
         </div>
-    
-    <div class="main-content">
-        <p>{{helpText}}</p>
-        
         <div class="tasks">
             <h3>To do list:</h3>
             {{task}}
@@ -37,6 +34,14 @@
                 {{/each_fintask}}
             </ul>
     </div>
+
+             
+        </div>
+    
+    <div class="main-content">
+        
+        
+
 
         
 

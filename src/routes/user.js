@@ -4,6 +4,7 @@ const sharp = require('sharp');
 const User = require('../models/user');
 const auth = require('../middleware/auth');
 const Task = require('../models/task');
+
 const { sendWelcomeEmail, sendCancelationEmail} = require('../emails/account');
 const router = express.Router();
 
@@ -94,7 +95,7 @@ router.get('/users/:userId/profile', async (req, res) => {
         helpText: 'This is some helpful text.',
         each_dotask: dTask,
         each_fintask: fTask,
-})
+    })
 
 });
 
