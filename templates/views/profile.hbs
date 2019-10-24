@@ -2,7 +2,7 @@
 
 <head>
     <title>{{name}}'s Profile</title>
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/profile.css" type="text/css">
 </head>
 
 
@@ -10,14 +10,16 @@
 <body>
      <div class="mould">
         <div class="userProfile">
-             <h1>Hello, {{name}}</h1>
+            <img src="{{linkUrl}}">
+             <h1>Hello, <br> {{name}}</h1>
              <div class="help-text">
-            <p>{{helpText}}</p>
+            
             </div>
-             <img src="{{linkUrl}}">
+             
         </div>
     
     <div class="main-content">
+        <p>{{helpText}}</p>
         
         <div class="tasks">
             <h3>To do list:</h3>

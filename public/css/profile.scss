@@ -22,7 +22,6 @@ body{
         background-color: darkslategrey;
         border-radius: 15px;
         align-content: center;
-        width: 69%;
         margin: auto;
         padding: 20px;
         color: white;
@@ -40,6 +39,7 @@ body{
             img{
                 align-content: center;
             }
+            background-color: darkgrey;
         }
         .tasks{
             display: inline-block;
@@ -47,7 +47,7 @@ body{
 
         }
         .main-content{
-            display: inline-block;
+            
 
         }
     }

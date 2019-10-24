@@ -18,7 +18,6 @@ body .mould {
   background-color: darkslategrey;
   border-radius: 15px;
   align-content: center;
-  width: 69%;
   margin: auto;
   padding: 20px;
   color: white;
@@ -28,14 +27,12 @@ body .mould .headr {
 }
 body .mould .userProfile {
   display: inline-block;
+  background-color: darkgrey;
 }
 body .mould .userProfile img {
   align-content: center;
 }
 body .mould .tasks {
-  display: inline-block;
-}
-body .mould .main-content {
   display: inline-block;
 }
 
