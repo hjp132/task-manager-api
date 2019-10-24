@@ -14,20 +14,23 @@
     <div class="container">
         {{>header}}
         <h1 class="display-3">User Search</h1>
+        <p>Please input your unique ID</p>
 
-        <form>User ID:
-            <input type="text" name="comments" id="comment">
+
+        {{!-- <form>User ID:
+            <div class="input-group-prepend">
+                <input type="text" name="comments" id="comment">
+            </div>
         </form>
         <a href=http://localhost:3000/users/ target="_blank"></a>
-        <button onclick="clickyClick()">Search</button>
+        <button onclick="clickyClick()">Search</button> --}}
 
-        {{!-- <form name="kevin">
-        <div class="form-group">
-            <label for="profileSearch">Please input your ID</label>
-            <input type="search" name="userId" class="form-control" id="userId" aria-describedby="profileHelp" placeholder="Enter ID">
-            
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="comments" id="comment" placeholder="Users ID:" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <div class="input-group-append">
+                <a href=http://localhost:3000/users/ target="_blank"></a>
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="clickyClick()">Search</button>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        </form> --}}
     </div>
 </body>
