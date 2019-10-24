@@ -1,18 +1,42 @@
+header {
+  display: inline-block;
+}
+
+header a {
+  color: #888888;
+  margin-right: 16px;
+  text-decoration: none;
+}
+
 body {
   background-color: white;
 }
 body h1 {
-  color: black;
+  color: white;
 }
 body .mould {
-  background-color: grey;
+  background-color: darkslategrey;
   border-radius: 15px;
   align-content: center;
-  width: 50%;
+  width: 69%;
   margin: auto;
+  padding: 20px;
+  color: white;
+}
+body .mould .headr {
+  list-style: none;
+}
+body .mould .userProfile {
+  display: inline-block;
 }
 body .mould .userProfile img {
   align-content: center;
+}
+body .mould .tasks {
+  display: inline-block;
+}
+body .mould .main-content {
+  display: inline-block;
 }
 
 /*# sourceMappingURL=style.css.map */

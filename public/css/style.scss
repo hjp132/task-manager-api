@@ -1,19 +1,55 @@
+header {
+    display: inline-block;
+}
+
+h1 {
+
+}
+
+header a {
+    color: #888888;
+    margin-right: 16px;
+    text-decoration: none;
+}
+
 body{
     background-color: white;
     h1{
-        color: black;
+        color: white;
         
     }
     .mould {
-        background-color: grey;
+        background-color: darkslategrey;
         border-radius: 15px;
         align-content: center;
-        width: 50%;
+        width: 69%;
         margin: auto;
+        padding: 20px;
+        color: white;
+        .headr{
+            list-style: none;
+            li{
+                
+            }
+
+
+
+        }
         .userProfile{
+            display: inline-block;
             img{
                 align-content: center;
             }
         }
+        .tasks{
+            display: inline-block;
+            
+
+        }
+        .main-content{
+            display: inline-block;
+
+        }
     }
 }
+
