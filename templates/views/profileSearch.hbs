@@ -2,7 +2,7 @@
 <head>
     <script>
         function clickyClick() {
-            url = 'http://localhost:3000/users/' + document.getElementById("comment").value +'/profile'
+            url = '/users/' + document.getElementById("comment").value +'/profile'
             window.open(url, '_blank');
         }             
     </script>
@@ -28,7 +28,7 @@
         <div class="input-group mb-3">
             <input type="text" class="form-control" name="comments" id="comment" placeholder="Users ID:" aria-label="Recipient's username" aria-describedby="button-addon2">
             <div class="input-group-append">
-                <a href=http://localhost:3000/users/ target="_blank"></a>
+                <a href=/users/ target="_blank"></a>
                 <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="clickyClick()">Search</button>
             </div>
         </div>
