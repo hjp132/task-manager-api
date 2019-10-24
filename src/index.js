@@ -34,6 +34,14 @@ app.get('', (req, res) => {
     })
 });
 
+app.get('/home', (req, res) => {
+    res.render('index', {
+
+        title: 'Home',
+        name: 'HP'
+    })
+});
+
 app.get('/signup', (req, res) => {
     res.render('signup', {
 
@@ -51,6 +59,13 @@ app.get('/help', (req, res) => {
         name: 'HP'
     })
 });
+
+app.get('/profileSearch', (req, res) => {
+    res.render('profileSearch', {
+        title: 'Profile Search',
+    
+    })
+})
 
 
 //
