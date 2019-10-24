@@ -99,6 +99,20 @@ router.get('/users/:userId/profile', async (req, res) => {
 
 });
 
+router.get('/profileSearch', async (req, res) => {
+
+
+    res.render('profileSearch', {
+        title: 'Profile Search',
+        linkUrl: `/profileSeach`,
+
+    
+    })
+
+})
+    
+
+
 
 router.patch('/users/me', auth, async (req, res) => {
     const updates = Object.keys(req.body);

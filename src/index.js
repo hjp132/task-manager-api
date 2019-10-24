@@ -28,11 +28,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 const router = express.Router();
 app.use('/',router);
 
-app.get('', (req, res) => {
-    res.render('index', {
-        title: 'Home'
-    })
-});
+
 
 app.get('/home', (req, res) => {
     res.render('index', {
@@ -60,13 +56,13 @@ app.get('/help', (req, res) => {
     })
 });
 
-app.get('/profileSearch', (req, res) => {
-    res.render('profileSearch', {
-        title: 'Profile Search',
-    
-    })
-})
 
+
+app.get('*', (req, res) => {
+    res.render('index', {
+        title: 'Home'
+    })
+});
 
 //
 // var MongoClient = require('mongodb').MongoClient;

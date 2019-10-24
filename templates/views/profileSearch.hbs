@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <head>
+    <script>
+        function clickyClick() {
+            url = 'http://localhost:3000/users/' + document.getElementById("comment").value +'/profile'
+            window.open(url, '_blank');
+        }             
+    </script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/profile.css" type="text/css">
 </head>
+
 
 <body>
     <div class="container">
         {{>header}}
         <h1 class="display-3">User Search</h1>
-        <form>
+
+        <form>User ID:
+            <input type="text" name="comments" id="comment">
+        </form>
+        <a href=http://localhost:3000/users/ target="_blank"></a>
+        <button onclick="clickyClick()">Search</button>
+
+        {{!-- <form name="kevin">
         <div class="form-group">
             <label for="profileSearch">Please input your ID</label>
-            <input type="search" class="form-control" id="exampleInputEmail1" aria-describedby="profileHelp" placeholder="Enter ID">
+            <input type="search" name="userId" class="form-control" id="userId" aria-describedby="profileHelp" placeholder="Enter ID">
             
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </form> --}}
     </div>
 </body>
